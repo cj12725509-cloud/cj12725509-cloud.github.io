@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CJ Jefferson | Computer Engineering</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b10;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(8, 11, 16, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1d2633;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #b7c0cc;
+            text-decoration: none;
+            margin-left: 28px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #4da3ff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 10%;
+            background:
+                radial-gradient(circle at 75% 40%, rgba(28, 103, 180, .18), transparent 35%),
+                #080b10;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            color: #4da3ff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(52px, 8vw, 100px);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            color: #8995a5;
+            font-weight: normal;
+            font-size: clamp(20px, 3vw, 30px);
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            color: #aab3bf;
+            max-width: 650px;
+            font-size: 17px;
+        }
+
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 22px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .primary {
+            background: #2678d9;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #354052;
+            color: white;
+        }
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-label {
+            color: #4da3ff;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        section h2 {
+            font-size: 38px;
+            margin: 8px 0 35px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #0f141c;
+            border: 1px solid #202a38;
+            padding: 28px;
+            border-radius: 12px;
+            transition: .25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #397fd0;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #9ca8b7;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 15px;
+            margin-right: 5px;
+            padding: 5px 10px;
+            background: #172131;
+            color: #75b5ff;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        .experience {
+            margin-bottom: 35px;
+            padding-left: 25px;
+            border-left: 2px solid #2678d9;
+        }
+
+        .experience h3 {
+            font-size: 22px;
+        }
+
+        .experience .date {
+            color: #748092;
+            font-size: 14px;
+            margin: 5px 0 10px;
+        }
+
+        .experience p {
+            color: #aab3bf;
+            max-width: 800px;
+        }
+
+        footer {
+            padding: 50px 10%;
+            border-top: 1px solid #1d2633;
+            color: #778292;
+            text-align: center;
+        }
+
+        @media(max-width: 700px) {
+            nav .links {
+                display: none;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            section {
+                padding: 75px 7%;
+            }
+
+            .hero {
+                padding: 110px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">CJ.</div>
+
+    <div class="links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">Computer Engineering • NC A&T</div>
+
+        <h1>Clinton “CJ”<br>Jefferson Jr.</h1>
+
+        <h2>Student. Builder. Future Computer Engineer.</h2>
+
+        <p>
+            Computer Engineering student at North Carolina A&T State University
+            with hands-on experience in information technology, computer hardware,
+            electronics, engineering systems, and technical problem solving.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary" href="#projects">Explore My Work</a>
+            <a class="button secondary" href="#experience">My Experience</a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<section id="about">
+
+    <span class="section-label">01 / About</span>
+    <h2>Building beyond the classroom.</h2>
+
+    <p style="max-width:800px;color:#aab3bf;font-size:18px;">
+        I'm an undergraduate student at North Carolina A&T State University
+        pursuing Computer Engineering. My interests include computer hardware,
+        embedded systems, programming, electronics, and the intersection between
+        hardware and software. Through internships, engineering programs, and
+        personal projects, I've been able to gain hands-on technical experience
+        before and during college.
+    </p>
+
+</section>
+
+
+<section id="experience">
+
+    <span class="section-label">02 / Experience</span>
+    <h2>Where I've worked & learned.</h2>
+
+    <div class="experience">
+        <h3>Barton College — Information Technology Department</h3>
+        <div class="date">Information Technology Intern • Wilson, NC</div>
+
+        <p>
+            Supported technology operations across the Barton College campus,
+            including computer and printer troubleshooting, audiovisual systems,
+            classroom technology, equipment setup, and technical support for
+            faculty and staff.
+        </p>
+    </div>
+
+
+    <div class="experience">
+        <h3>SEED Academy</h3>
+        <div class="date">Engineering & Technology Program</div>
+
+        <p>
+            Participated in hands-on engineering experiences involving electrical
+            systems, automation equipment, pneumatics, circuit training systems,
+            3D printing, troubleshooting, and collaborative design challenges.
+        </p>
+    </div>
+
+
+    <div class="experience">
+        <h3>TRIO Upward Bound</h3>
+        <div class="date">Academic & College Readiness Program</div>
+
+        <p>
+            Participated in college-readiness, academic enrichment, leadership,
+            and professional development activities designed to prepare students
+            for success in higher education.
+        </p>
+    </div>
+
+</section>
+
+
+<section id="projects">
+
+    <span class="section-label">03 / Projects</span>
+    <h2>Things I've worked on.</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Engineering Systems</h3>
+            <p>
+                Hands-on experience working with electrical, pneumatic,
+                automation, and training systems through SEED Academy.
+            </p>
+
+            <span class="tag">Engineering</span>
+            <span class="tag">Electronics</span>
+        </div>
+
+
+        <div class="card">
+            <h3>3D Modeling & Printing</h3>
+            <p>
+                Experience creating digital 3D models and seeing designs move
+                from a virtual environment into physical prototypes.
+            </p>
+
+            <span class="tag">3D Design</span>
+            <span class="tag">3D Printing</span>
+        </div>
+
+
+        <div class="card">
+            <h3>Custom PC Hardware</h3>
+            <p>
+                Experience with PC component selection, computer assembly,
+                hardware configuration, upgrades, and troubleshooting.
+            </p>
+
+            <span class="tag">PC Hardware</span>
+            <span class="tag">Troubleshooting</span>
+        </div>
+
+
+        <div class="card">
+            <h3>C++ Programming</h3>
+            <p>
+                Developing foundational programming and problem-solving skills
+                using C++ while pursuing Computer Engineering.
+            </p>
+
+            <span class="tag">C++</span>
+            <span class="tag">Programming</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="contact">
+
+    <span class="section-label">04 / Contact</span>
+    <h2>Let's connect.</h2>
+
+    <p style="color:#aab3bf;margin-bottom:25px;">
+        I'm currently building my experience in computer engineering,
+        information technology, and hardware-focused projects.
+    </p>
+
+    <a class="button primary"
+       href="mailto:cajefferson2@ncat.edu">
+       Email Me
+    </a>
+
+</section>
+
+
+<footer>
+    © 2026 Clinton “CJ” Jefferson Jr. • Built by CJ
+</footer>
+
+</body>
+</html>
