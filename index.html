@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CJ Jefferson | Computer Engineering</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,12 +20,17 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #080b10;
-            color: #f5f7fa;
-            line-height: 1.6;
-        }
-
+    font-family: Inter, Arial, sans-serif;
+    background:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px),
+        radial-gradient(circle at 80% 15%, rgba(0, 102, 204, 0.14), transparent 32%),
+        #070a0f;
+    background-size: 55px 55px, 55px 55px, auto, auto;
+    color: #f5f7fa;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
         nav {
             position: fixed;
             top: 0;
@@ -56,172 +63,282 @@
         }
 
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 10%;
-            background:
-                radial-gradient(circle at 75% 40%, rgba(28, 103, 180, .18), transparent 35%),
-                #080b10;
-        }
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 140px 10% 100px;
+    overflow: hidden;
+}
 
-        .hero-content {
-            max-width: 850px;
-        }
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    background: rgba(0, 119, 255, 0.12);
+    filter: blur(120px);
+    right: -180px;
+    top: 5%;
+    pointer-events: none;
+}
 
-        .eyebrow {
-            color: #4da3ff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(77, 163, 255, 0.12);
+    border-radius: 50%;
+    right: 8%;
+    top: 30%;
+    pointer-events: none;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
 
-        h1 {
-            font-size: clamp(52px, 8vw, 100px);
-            line-height: .95;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
-        }
+.eyebrow {
+    font-family: "Space Mono", monospace;
+    color: #4da3ff;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+   
 
+       h1 {
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-weight: 800;
+    line-height: 0.88;
+    letter-spacing: -0.065em;
+    margin-bottom: 32px;
+    max-width: 1000px;
+}
         .hero h2 {
-            color: #8995a5;
-            font-weight: normal;
-            font-size: clamp(20px, 3vw, 30px);
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            color: #aab3bf;
-            max-width: 650px;
-            font-size: 17px;
-        }
+    color: #8995a5;
+    font-weight: 400;
+    font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+    max-width: 720px;
+}
+       .hero p {
+    color: #aab3bf;
+    max-width: 620px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 38px;
+}
 
         .buttons {
-            margin-top: 35px;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
+    margin-top: 36px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+}
         .button {
-            padding: 13px 22px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-        }
+    padding: 14px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
 
-        .primary {
-            background: #2678d9;
-            color: white;
-        }
+       .primary {
+    background: linear-gradient(135deg, #2678d9, #4da3ff);
+    color: white;
+    border: 1px solid transparent;
+    box-shadow: 0 8px 24px rgba(38, 120, 217, 0.22);
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(38, 120, 217, 0.32);
+}
 
         .secondary {
-            border: 1px solid #354052;
-            color: white;
-        }
+    border: 1px solid #354052;
+    color: #f5f7fa;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.secondary:hover {
+    transform: translateY(-2px);
+    border-color: #4da3ff;
+    background: rgba(77, 163, 255, 0.07);
+}
 
         section {
             padding: 100px 10%;
         }
 
         .section-label {
-            color: #4da3ff;
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
+    font-family: "Space Mono", monospace;
+    color: #4da3ff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
 
         section h2 {
-            font-size: 38px;
-            margin: 8px 0 35px;
-        }
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin: 8px 0 40px;
+}
+       .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #0f141c;
-            border: 1px solid #202a38;
-            padding: 28px;
-            border-radius: 12px;
-            transition: .25s;
-        }
+       .card {
+    background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.018));
+    border: 1px solid #202a38;
+    padding: 30px;
+    border-radius: 14px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #397fd0;
-        }
+    transform: translateY(-6px);
+    border-color: #4da3ff;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
 
         .card h3 {
-            margin-bottom: 10px;
-        }
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
 
-        .card p {
-            color: #9ca8b7;
-        }
+.card p {
+    color: #9ca8b7;
+    line-height: 1.7;
+}
 
-        .tag {
-            display: inline-block;
-            margin-top: 15px;
-            margin-right: 5px;
-            padding: 5px 10px;
-            background: #172131;
-            color: #75b5ff;
-            border-radius: 20px;
-            font-size: 12px;
-        }
+.tag {
+    display: inline-block;
+    margin-top: 18px;
+    margin-right: 6px;
+    padding: 6px 11px;
+    background: rgba(77, 163, 255, 0.09);
+    border: 1px solid rgba(77, 163, 255, 0.16);
+    color: #8fc2ff;
+    border-radius: 999px;
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+}
 
-        .experience {
-            margin-bottom: 35px;
-            padding-left: 25px;
-            border-left: 2px solid #2678d9;
-        }
+       .experience {
+    margin-bottom: 42px;
+    padding: 4px 0 4px 28px;
+    border-left: 1px solid rgba(77, 163, 255, 0.35);
+    position: relative;
+}
 
-        .experience h3 {
-            font-size: 22px;
-        }
+.experience h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+}
 
-        .experience .date {
-            color: #748092;
-            font-size: 14px;
-            margin: 5px 0 10px;
-        }
+.experience .date {
+    color: #718096;
+    font-family: "Space Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin: 7px 0 12px;
+}
 
-        .experience p {
-            color: #aab3bf;
-            max-width: 800px;
-        }
+       .experience p {
+    color: #aab3bf;
+    max-width: 760px;
+    line-height: 1.75;
+    font-size: 0.98rem;
+}
 
-        footer {
-            padding: 50px 10%;
-            border-top: 1px solid #1d2633;
-            color: #778292;
-            text-align: center;
-        }
+       footer {
+    padding: 60px 10%;
+    border-top: 1px solid #1d2633;
+    color: #718096;
+    text-align: center;
+    font-family: "Space Mono", monospace;
+    font-size: 0.75rem;
+}
 
         @media(max-width: 700px) {
-            nav .links {
-                display: none;
-            }
+    nav {
+        padding: 18px 6%;
+    }
 
-            h1 {
-                letter-spacing: -2px;
-            }
+    nav .links {
+        display: none;
+    }
 
-            section {
-                padding: 75px 7%;
-            }
+    h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+        letter-spacing: -0.045em;
+        line-height: 0.9;
+    }
 
-            .hero {
-                padding: 110px 7%;
-            }
-        }
-    </style>
+    .hero {
+        padding: 120px 7% 90px;
+        min-height: 100svh;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 75px 7%;
+    }
+
+    section h2 {
+        font-size: clamp(1.8rem, 9vw, 2.5rem);
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    .button {
+        padding: 12px 18px;
+        font-size: 0.85rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .experience {
+        padding-left: 20px;
+    }
+}    </style>
 </head>
 
 <body>
